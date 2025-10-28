@@ -1,0 +1,35 @@
+2025-10-27T22:57:34.526-05:00  INFO 16108 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : Starting ErpVdsApplication using Java 21.0.2 with PID 16108 (C:\demo2\erp-vds\target\classes started by gmflo in C:\demo2\erp-vds)
+2025-10-27T22:57:34.528-05:00  INFO 16108 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-10-27T22:57:34.899-05:00  INFO 16108 --- [erp-vds] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-27T22:57:34.934-05:00  INFO 16108 --- [erp-vds] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 1 JPA repository interface.
+2025-10-27T22:57:35.222-05:00  INFO 16108 --- [erp-vds] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-27T22:57:35.233-05:00  INFO 16108 --- [erp-vds] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-27T22:57:35.233-05:00  INFO 16108 --- [erp-vds] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-10-27T22:57:35.277-05:00  INFO 16108 --- [erp-vds] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-27T22:57:35.278-05:00  INFO 16108 --- [erp-vds] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 723 ms
+2025-10-27T22:57:35.377-05:00  INFO 16108 --- [erp-vds] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-27T22:57:35.429-05:00  INFO 16108 --- [erp-vds] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-10-27T22:57:35.456-05:00  INFO 16108 --- [erp-vds] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-27T22:57:35.661-05:00  INFO 16108 --- [erp-vds] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-27T22:57:35.683-05:00  INFO 16108 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-27T22:57:35.820-05:00  INFO 16108 --- [erp-vds] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-27T22:57:35.822-05:00  INFO 16108 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-27T22:57:35.843-05:00  WARN 16108 --- [erp-vds] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-27T22:57:35.858-05:00  INFO 16108 --- [erp-vds] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-27T22:57:36.432-05:00  INFO 16108 --- [erp-vds] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-27T22:57:36.458-05:00  INFO 16108 --- [erp-vds] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-27T22:57:36.691-05:00  WARN 16108 --- [erp-vds] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-27T22:57:36.708-05:00  INFO 16108 --- [erp-vds] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-10-27T22:57:36.853-05:00  INFO 16108 --- [erp-vds] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-10-27T22:57:36.900-05:00  INFO 16108 --- [erp-vds] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-27T22:57:36.905-05:00  INFO 16108 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : Started ErpVdsApplication in 2.68 seconds (process running for 2.895)
+2025-10-27T22:58:31.568-05:00  INFO 16108 --- [erp-vds] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-27T22:58:31.568-05:00  INFO 16108 --- [erp-vds] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-27T22:58:31.569-05:00  INFO 16108 --- [erp-vds] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
