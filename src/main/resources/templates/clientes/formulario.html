@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title th:text="${titulo} + ' - VD Solutions ERP'">Cliente - VD Solutions ERP</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="card">
+            <div class="card-header">
+                <h4 th:text="${titulo}">Formulario de Cliente</h4>
+            </div>
+            <div class="card-body">
+                <form th:action="@{/clientes/guardar}" th:object="${cliente}" method="post">
+                    <!-- Campo oculto para ID -->
+                    <input type="hidden" th:field="*{idCliente}">
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">Nombre Completo *</label>
+                            <input type="text" th:field="*{nombre}" class="form-control" 
+                                   id="nombre" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="tipoDocumento" class="form-label">Tipo Documento</label>
+                            <select th:field="*{tipoDocumento}" class="form-select" id="tipoDocumento" required>
+                                <option value="">Seleccionar...</option>
+                                <option th:each="tipo : ${tiposDocumento}" 
+                                        th:value="${tipo}" 
+                                        th:text="${tipo}">
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="numeroDocumento" class="form-label">Número Documento *</label>
+                            <input type="text" th:field="*{numeroDocumento}" class="form-control" 
+                                   id="numeroDocumento" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <input type="text" th:field="*{direccion}" class="form-control" 
+                                   id="direccion">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="contacto" class="form-label">Contacto</label>
+                            <input type="text" th:field="*{contacto}" class="form-control" 
+                                   id="contacto">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" th:field="*{email}" class="form-control" 
+                                   id="email">
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-save"></i> Guardar
+                            </button>
+                            <a th:href="@{/clientes}" class="btn btn-secondary">
+                                <i class="fas fa-times"></i> Cancelar
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>VD Solutions ERP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+                <div class="card shadow">
+                    <div class="card-body p-5">
+                        <h1 class="card-title text-primary mb-4">
+                            <i class="fas fa-shield-alt"></i> VD Solutions ERP
+                        </h1>
+                        <p class="card-text fs-5" th:text="${mensaje}">Bienvenido al Sistema ERP</p>
+                        <div class="mt-4">
+                            <a th:href="@{/dashboard}" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-tachometer-alt"></i> Ir al Dashboard
+                            </a>
+                            <a th:href="@{/clientes}" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-users"></i> Gestión de Clientes
+                            </a>
+                        </div>
+                        <div class="mt-3">
+                            <small class="text-muted">
+                                Sistema de Gestión Integral - VD Solutions
+                                <p>Developer : Gian Moises Flores Rivera @U22320340
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
