@@ -1,17 +1,23 @@
 package com.vdsolutions.erp.service;
 
-import com.vdsolutions.erp.model.Cliente;
-import com.vdsolutions.erp.model.Producto;
-import com.vdsolutions.erp.model.Tecnico;
-import com.google.common.collect.Lists;
-import org.apache.poi.ss.usermodel.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.List;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.FillPatternType;
+import org.apache.poi.ss.usermodel.Font;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.util.List;
+import com.vdsolutions.erp.model.Cliente;
+import com.vdsolutions.erp.model.Producto;
 
 @Service
 public class ReporteService {
@@ -22,8 +28,7 @@ public class ReporteService {
     @Autowired
     private ProductoService productoService;
 
-    @Autowired
-    private TecnicoService tecnicoService;
+    // Nota: Removí tecnicoService ya que no se usa en los reportes actuales
 
     public byte[] generarReporteClientes() throws IOException {
         List<Cliente> clientes = clienteService.obtenerTodosClientes();
@@ -122,5 +127,11 @@ public class ReporteService {
             workbook.write(outputStream);
             return outputStream.toByteArray();
         }
+    }
+
+    // Método adicional para reporte de técnicos (opcional para el futuro)
+    public byte[] generarReporteTecnicos() throws IOException {
+        // Implementación futura
+        return new byte[0];
     }
 }

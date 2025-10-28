@@ -1,21 +1,669 @@
-2025-10-27T22:57:34.526-05:00  INFO 16108 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : Starting ErpVdsApplication using Java 21.0.2 with PID 16108 (C:\demo2\erp-vds\target\classes started by gmflo in C:\demo2\erp-vds)
-2025-10-27T22:57:34.528-05:00  INFO 16108 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-10-27T22:57:34.899-05:00  INFO 16108 --- [erp-vds] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-10-27T22:57:34.934-05:00  INFO 16108 --- [erp-vds] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 1 JPA repository interface.
-2025-10-27T22:57:35.222-05:00  INFO 16108 --- [erp-vds] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-10-27T22:57:35.233-05:00  INFO 16108 --- [erp-vds] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-10-27T22:57:35.233-05:00  INFO 16108 --- [erp-vds] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
-2025-10-27T22:57:35.277-05:00  INFO 16108 --- [erp-vds] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-10-27T22:57:35.278-05:00  INFO 16108 --- [erp-vds] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 723 ms
-2025-10-27T22:57:35.377-05:00  INFO 16108 --- [erp-vds] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-10-27T22:57:35.429-05:00  INFO 16108 --- [erp-vds] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
-2025-10-27T22:57:35.456-05:00  INFO 16108 --- [erp-vds] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-10-27T22:57:35.661-05:00  INFO 16108 --- [erp-vds] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-10-27T22:57:35.683-05:00  INFO 16108 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-10-27T22:57:35.820-05:00  INFO 16108 --- [erp-vds] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2025-10-27T22:57:35.822-05:00  INFO 16108 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-10-27T22:57:35.843-05:00  WARN 16108 --- [erp-vds] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-10-27T22:57:35.858-05:00  INFO 16108 --- [erp-vds] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-10-28T00:07:33.517-05:00  INFO 16108 --- [erp-vds] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-28T00:07:33.525-05:00  INFO 16108 --- [erp-vds] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-28T00:07:33.528-05:00  INFO 16108 --- [erp-vds] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T00:07:33.531-05:00  INFO 16108 --- [erp-vds] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T00:07:33.532-05:00  INFO 16108 --- [erp-vds] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T00:10:31.242-05:00  INFO 26932 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : Starting ErpVdsApplication using Java 21.0.2 with PID 26932 (C:\demo2\erp-vds\target\classes started by gmflo in C:\demo2\erp-vds)
+2025-10-28T00:10:31.244-05:00  INFO 26932 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T00:10:31.654-05:00  INFO 26932 --- [erp-vds] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T00:10:31.697-05:00  INFO 26932 --- [erp-vds] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2025-10-28T00:10:32.024-05:00  INFO 26932 --- [erp-vds] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T00:10:32.033-05:00  INFO 26932 --- [erp-vds] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T00:10:32.034-05:00  INFO 26932 --- [erp-vds] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-10-28T00:10:32.078-05:00  INFO 26932 --- [erp-vds] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T00:10:32.079-05:00  INFO 26932 --- [erp-vds] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 807 ms
+2025-10-28T00:10:32.142-05:00  INFO 26932 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T00:10:32.264-05:00  INFO 26932 --- [erp-vds] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-28T00:10:32.265-05:00  INFO 26932 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T00:10:32.282-05:00  WARN 26932 --- [erp-vds] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+2025-10-28T00:10:32.283-05:00  INFO 26932 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T00:10:32.284-05:00  INFO 26932 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T00:10:32.286-05:00  INFO 26932 --- [erp-vds] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-28T00:10:32.293-05:00  INFO 26932 --- [erp-vds] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-28T00:10:32.304-05:00 ERROR 26932 --- [erp-vds] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:973) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.7.jar:3.5.7]
+	at com.vdsolutions.erp.ErpVdsApplication.main(ErpVdsApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 10 common frames omitted
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:293) ~[spring-jdbc-6.2.12.jar:6.2.12]
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254) ~[spring-jdbc-6.2.12.jar:6.2.12]
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54) ~[spring-jdbc-6.2.12.jar:6.2.12]
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:146) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:108) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyDataScripts(AbstractScriptDatabaseInitializer.java:102) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:77) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:66) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 17 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true) [42104-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7932) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7916) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.readTableOrView(Parser.java:7895) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.readTableOrView(Parser.java:7857) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseInsert(Parser.java:1521) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parsePrepared(Parser.java:698) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:581) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:556) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.prepareCommand(Parser.java:484) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231) ~[h2-2.3.232.jar:2.3.232]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.3.jar:na]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261) ~[spring-jdbc-6.2.12.jar:6.2.12]
+	... 27 common frames omitted
+
+2025-10-28T00:14:33.415-05:00  INFO 20552 --- [main] com.vdsolutions.erp.ErpVdsApplication    : Starting ErpVdsApplication using Java 21.0.2 with PID 20552 (C:\demo2\erp-vds\target\classes started by gmflo in C:\demo2\erp-vds)
+2025-10-28T00:14:33.416-05:00  INFO 20552 --- [main] com.vdsolutions.erp.ErpVdsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T00:14:33.801-05:00  INFO 20552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T00:14:33.840-05:00  INFO 20552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 3 JPA repository interfaces.
+2025-10-28T00:14:34.191-05:00  INFO 20552 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-10-28T00:14:34.197-05:00  INFO 20552 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T00:14:34.197-05:00  INFO 20552 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-28T00:14:34.262-05:00  INFO 20552 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T00:14:34.263-05:00  INFO 20552 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 817 ms
+2025-10-28T00:14:34.286-05:00  INFO 20552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T00:14:34.404-05:00  INFO 20552 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-28T00:14:34.405-05:00  INFO 20552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T00:14:34.412-05:00  INFO 20552 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-10-28T00:14:34.458-05:00  WARN 20552 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+2025-10-28T00:14:34.458-05:00  INFO 20552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T00:14:34.460-05:00  INFO 20552 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T00:14:34.461-05:00  INFO 20552 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-28T00:14:34.468-05:00  INFO 20552 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-28T00:14:34.478-05:00 ERROR 20552 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166) ~[spring-context-6.0.14.jar:6.0.14]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940) ~[spring-context-6.0.14.jar:6.0.14]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.14.jar:6.0.14]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.6.jar:3.1.6]
+	at com.vdsolutions.erp.ErpVdsApplication.main(ErpVdsApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:282) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:146) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:108) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyDataScripts(AbstractScriptDatabaseInitializer.java:102) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:77) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:66) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.14.jar:6.0.14]
+	... 18 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true) [42104-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8385) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8369) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.readTableOrView(Parser.java:8358) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.readTableOrView(Parser.java:8328) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parseInsert(Parser.java:1632) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parsePrepared(Parser.java:814) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parse(Parser.java:689) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parse(Parser.java:661) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.prepareCommand(Parser.java:569) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223) ~[h2-2.1.214.jar:2.1.214]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar:na]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	... 28 common frames omitted
+
+2025-10-28T00:18:05.868-05:00  INFO 23160 --- [main] com.vdsolutions.erp.ErpVdsApplication    : Starting ErpVdsApplication using Java 21.0.2 with PID 23160 (C:\demo2\erp-vds\target\classes started by gmflo in C:\demo2\erp-vds)
+2025-10-28T00:18:05.870-05:00  INFO 23160 --- [main] com.vdsolutions.erp.ErpVdsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T00:18:06.279-05:00  INFO 23160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T00:18:06.320-05:00  INFO 23160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2025-10-28T00:18:06.693-05:00  INFO 23160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-10-28T00:18:06.700-05:00  INFO 23160 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T00:18:06.701-05:00  INFO 23160 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-28T00:18:06.770-05:00  INFO 23160 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T00:18:06.770-05:00  INFO 23160 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 867 ms
+2025-10-28T00:18:06.787-05:00  INFO 23160 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T00:18:06.916-05:00  INFO 23160 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-28T00:18:06.918-05:00  INFO 23160 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T00:18:06.926-05:00  INFO 23160 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-10-28T00:18:06.972-05:00  WARN 23160 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+2025-10-28T00:18:06.973-05:00  INFO 23160 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T00:18:06.974-05:00  INFO 23160 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T00:18:06.976-05:00  INFO 23160 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-28T00:18:06.984-05:00  INFO 23160 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-28T00:18:06.994-05:00 ERROR 23160 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166) ~[spring-context-6.0.14.jar:6.0.14]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940) ~[spring-context-6.0.14.jar:6.0.14]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.14.jar:6.0.14]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.6.jar:3.1.6]
+	at com.vdsolutions.erp.ErpVdsApplication.main(ErpVdsApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:282) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:146) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:108) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyDataScripts(AbstractScriptDatabaseInitializer.java:102) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:77) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:66) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.14.jar:6.0.14]
+	... 18 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true) [42104-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8385) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8369) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.readTableOrView(Parser.java:8358) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.readTableOrView(Parser.java:8328) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parseInsert(Parser.java:1632) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parsePrepared(Parser.java:814) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parse(Parser.java:689) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parse(Parser.java:661) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.prepareCommand(Parser.java:569) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223) ~[h2-2.1.214.jar:2.1.214]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar:na]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	... 28 common frames omitted
+
+2025-10-28T00:19:07.735-05:00  INFO 7588 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : Starting ErpVdsApplication using Java 21.0.2 with PID 7588 (C:\demo2\erp-vds\target\classes started by gmflo in C:\demo2\erp-vds)
+2025-10-28T00:19:07.737-05:00  INFO 7588 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T00:19:08.173-05:00  INFO 7588 --- [erp-vds] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T00:19:08.215-05:00  INFO 7588 --- [erp-vds] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2025-10-28T00:19:08.574-05:00  INFO 7588 --- [erp-vds] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T00:19:08.584-05:00  INFO 7588 --- [erp-vds] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T00:19:08.584-05:00  INFO 7588 --- [erp-vds] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-10-28T00:19:08.629-05:00  INFO 7588 --- [erp-vds] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T00:19:08.630-05:00  INFO 7588 --- [erp-vds] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 866 ms
+2025-10-28T00:19:08.695-05:00  INFO 7588 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T00:19:08.831-05:00  INFO 7588 --- [erp-vds] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-28T00:19:08.832-05:00  INFO 7588 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T00:19:08.842-05:00  WARN 7588 --- [erp-vds] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+2025-10-28T00:19:08.843-05:00  INFO 7588 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T00:19:08.845-05:00  INFO 7588 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T00:19:08.847-05:00  INFO 7588 --- [erp-vds] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-28T00:19:08.854-05:00  INFO 7588 --- [erp-vds] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-28T00:19:08.866-05:00 ERROR 7588 --- [erp-vds] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:973) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.7.jar:3.5.7]
+	at com.vdsolutions.erp.ErpVdsApplication.main(ErpVdsApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 10 common frames omitted
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:293) ~[spring-jdbc-6.2.12.jar:6.2.12]
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254) ~[spring-jdbc-6.2.12.jar:6.2.12]
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54) ~[spring-jdbc-6.2.12.jar:6.2.12]
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:146) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:108) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyDataScripts(AbstractScriptDatabaseInitializer.java:102) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:77) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:66) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 17 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true) [42104-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7932) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7916) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.readTableOrView(Parser.java:7895) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.readTableOrView(Parser.java:7857) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseInsert(Parser.java:1521) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parsePrepared(Parser.java:698) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:581) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:556) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.prepareCommand(Parser.java:484) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231) ~[h2-2.3.232.jar:2.3.232]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.3.jar:na]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261) ~[spring-jdbc-6.2.12.jar:6.2.12]
+	... 27 common frames omitted
+
+2025-10-28T00:19:32.745-05:00  INFO 5424 --- [main] com.vdsolutions.erp.ErpVdsApplication    : Starting ErpVdsApplication using Java 21.0.2 with PID 5424 (C:\demo2\erp-vds\target\classes started by gmflo in C:\demo2\erp-vds)
+2025-10-28T00:19:32.746-05:00  INFO 5424 --- [main] com.vdsolutions.erp.ErpVdsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T00:19:33.146-05:00  INFO 5424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T00:19:33.188-05:00  INFO 5424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+2025-10-28T00:19:33.548-05:00  INFO 5424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-10-28T00:19:33.554-05:00  INFO 5424 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T00:19:33.554-05:00  INFO 5424 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-28T00:19:33.623-05:00  INFO 5424 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T00:19:33.624-05:00  INFO 5424 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 849 ms
+2025-10-28T00:19:33.648-05:00  INFO 5424 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T00:19:33.788-05:00  INFO 5424 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-28T00:19:33.790-05:00  INFO 5424 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T00:19:33.796-05:00  INFO 5424 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-10-28T00:19:33.844-05:00  WARN 5424 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+2025-10-28T00:19:33.845-05:00  INFO 5424 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T00:19:33.846-05:00  INFO 5424 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T00:19:33.847-05:00  INFO 5424 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-28T00:19:33.854-05:00  INFO 5424 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-28T00:19:33.864-05:00 ERROR 5424 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166) ~[spring-context-6.0.14.jar:6.0.14]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940) ~[spring-context-6.0.14.jar:6.0.14]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.14.jar:6.0.14]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.6.jar:3.1.6]
+	at com.vdsolutions.erp.ErpVdsApplication.main(ErpVdsApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:282) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:146) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:108) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyDataScripts(AbstractScriptDatabaseInitializer.java:102) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:77) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:66) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.14.jar:6.0.14]
+	... 18 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true) [42104-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8385) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8369) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.readTableOrView(Parser.java:8358) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.readTableOrView(Parser.java:8328) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parseInsert(Parser.java:1632) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parsePrepared(Parser.java:814) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parse(Parser.java:689) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parse(Parser.java:661) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.prepareCommand(Parser.java:569) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223) ~[h2-2.1.214.jar:2.1.214]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar:na]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	... 28 common frames omitted
+
+2025-10-28T00:20:05.253-05:00  INFO 23624 --- [main] com.vdsolutions.erp.ErpVdsApplication    : Starting ErpVdsApplication using Java 21.0.2 with PID 23624 (C:\demo2\erp-vds\target\classes started by gmflo in C:\demo2\erp-vds)
+2025-10-28T00:20:05.255-05:00  INFO 23624 --- [main] com.vdsolutions.erp.ErpVdsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T00:20:05.638-05:00  INFO 23624 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T00:20:05.676-05:00  INFO 23624 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 3 JPA repository interfaces.
+2025-10-28T00:20:06.031-05:00  INFO 23624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-10-28T00:20:06.037-05:00  INFO 23624 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T00:20:06.037-05:00  INFO 23624 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-28T00:20:06.103-05:00  INFO 23624 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T00:20:06.104-05:00  INFO 23624 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 819 ms
+2025-10-28T00:20:06.121-05:00  INFO 23624 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T00:20:06.236-05:00  INFO 23624 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-28T00:20:06.237-05:00  INFO 23624 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T00:20:06.243-05:00  INFO 23624 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-10-28T00:20:06.290-05:00  WARN 23624 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+2025-10-28T00:20:06.291-05:00  INFO 23624 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T00:20:06.292-05:00  INFO 23624 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T00:20:06.293-05:00  INFO 23624 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-28T00:20:06.299-05:00  INFO 23624 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-28T00:20:06.310-05:00 ERROR 23624 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166) ~[spring-context-6.0.14.jar:6.0.14]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940) ~[spring-context-6.0.14.jar:6.0.14]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.14.jar:6.0.14]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.6.jar:3.1.6]
+	at com.vdsolutions.erp.ErpVdsApplication.main(ErpVdsApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:282) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:146) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:108) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyDataScripts(AbstractScriptDatabaseInitializer.java:102) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:77) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:66) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.14.jar:6.0.14]
+	... 18 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true) [42104-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8385) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8369) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.readTableOrView(Parser.java:8358) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.readTableOrView(Parser.java:8328) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parseInsert(Parser.java:1632) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parsePrepared(Parser.java:814) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parse(Parser.java:689) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parse(Parser.java:661) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.prepareCommand(Parser.java:569) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223) ~[h2-2.1.214.jar:2.1.214]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar:na]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	... 28 common frames omitted
+
+2025-10-28T00:21:01.921-05:00  INFO 26428 --- [main] com.vdsolutions.erp.ErpVdsApplication    : Starting ErpVdsApplication using Java 21.0.2 with PID 26428 (C:\demo2\erp-vds\target\classes started by gmflo in C:\demo2\erp-vds)
+2025-10-28T00:21:01.923-05:00  INFO 26428 --- [main] com.vdsolutions.erp.ErpVdsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T00:21:02.291-05:00  INFO 26428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T00:21:02.331-05:00  INFO 26428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 3 JPA repository interfaces.
+2025-10-28T00:21:02.678-05:00  INFO 26428 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-10-28T00:21:02.684-05:00  INFO 26428 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T00:21:02.684-05:00  INFO 26428 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-28T00:21:02.749-05:00  INFO 26428 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T00:21:02.750-05:00  INFO 26428 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 797 ms
+2025-10-28T00:21:02.767-05:00  INFO 26428 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T00:21:02.897-05:00  INFO 26428 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-28T00:21:02.898-05:00  INFO 26428 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T00:21:02.904-05:00  INFO 26428 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-10-28T00:21:02.948-05:00  WARN 26428 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+2025-10-28T00:21:02.949-05:00  INFO 26428 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T00:21:02.950-05:00  INFO 26428 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T00:21:02.952-05:00  INFO 26428 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-28T00:21:02.958-05:00  INFO 26428 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-28T00:21:02.969-05:00 ERROR 26428 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166) ~[spring-context-6.0.14.jar:6.0.14]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940) ~[spring-context-6.0.14.jar:6.0.14]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.14.jar:6.0.14]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.6.jar:3.1.6]
+	at com.vdsolutions.erp.ErpVdsApplication.main(ErpVdsApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:282) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:146) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:108) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyDataScripts(AbstractScriptDatabaseInitializer.java:102) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:77) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:66) ~[spring-boot-3.1.6.jar:3.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.14.jar:6.0.14]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.14.jar:6.0.14]
+	... 18 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true) [42104-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8385) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8369) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.readTableOrView(Parser.java:8358) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.readTableOrView(Parser.java:8328) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parseInsert(Parser.java:1632) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parsePrepared(Parser.java:814) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parse(Parser.java:689) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.parse(Parser.java:661) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.command.Parser.prepareCommand(Parser.java:569) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223) ~[h2-2.1.214.jar:2.1.214]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar:na]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261) ~[spring-jdbc-6.0.14.jar:6.0.14]
+	... 28 common frames omitted
+
+2025-10-28T00:22:29.082-05:00  INFO 12528 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : Starting ErpVdsApplication using Java 21.0.2 with PID 12528 (C:\demo2\erp-vds\target\classes started by gmflo in C:\demo2\erp-vds)
+2025-10-28T00:22:29.084-05:00  INFO 12528 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T00:22:29.492-05:00  INFO 12528 --- [erp-vds] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T00:22:29.536-05:00  INFO 12528 --- [erp-vds] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 3 JPA repository interfaces.
+2025-10-28T00:22:29.863-05:00  INFO 12528 --- [erp-vds] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T00:22:29.873-05:00  INFO 12528 --- [erp-vds] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T00:22:29.873-05:00  INFO 12528 --- [erp-vds] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-10-28T00:22:29.913-05:00  INFO 12528 --- [erp-vds] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T00:22:29.914-05:00  INFO 12528 --- [erp-vds] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 807 ms
+2025-10-28T00:22:29.975-05:00  INFO 12528 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T00:22:30.103-05:00  INFO 12528 --- [erp-vds] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-28T00:22:30.104-05:00  INFO 12528 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T00:22:30.114-05:00  WARN 12528 --- [erp-vds] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+2025-10-28T00:22:30.115-05:00  INFO 12528 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T00:22:30.116-05:00  INFO 12528 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T00:22:30.118-05:00  INFO 12528 --- [erp-vds] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-28T00:22:30.125-05:00  INFO 12528 --- [erp-vds] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-28T00:22:30.136-05:00 ERROR 12528 --- [erp-vds] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:973) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.7.jar:3.5.7]
+	at com.vdsolutions.erp.ErpVdsApplication.main(ErpVdsApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 10 common frames omitted
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of file [C:\demo2\erp-vds\target\classes\data.sql]: INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:293) ~[spring-jdbc-6.2.12.jar:6.2.12]
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254) ~[spring-jdbc-6.2.12.jar:6.2.12]
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54) ~[spring-jdbc-6.2.12.jar:6.2.12]
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:146) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:108) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyDataScripts(AbstractScriptDatabaseInitializer.java:102) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:77) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:66) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 17 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found (this database is empty); SQL statement:
+INSERT INTO cliente (nombre, tipo_documento, numero_documento, direccion, contacto, email, fecha_registro, activo) VALUES ('Juan Pérez García', 'DNI', '12345678', 'Av. Lima 123', '999888777', 'juan.perez@email.com', NOW(), true), ('María López Soto', 'DNI', '87654321', 'Jr. Ayacucho 456', '988777666', 'maria.lopez@email.com', NOW(), true), ('Empresa Tech SAC', 'RUC', '20123456789', 'Av. Industrial 789', '955444333', 'contacto@empresatech.com', NOW(), true), ('Carlos Rodríguez', 'DNI', '11223344', 'Calle Los Pinos 321', '977666555', 'carlos.rodriguez@email.com', NOW(), true) [42104-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7932) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:7916) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.readTableOrView(Parser.java:7895) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.readTableOrView(Parser.java:7857) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseInsert(Parser.java:1521) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parsePrepared(Parser.java:698) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:581) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:556) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.prepareCommand(Parser.java:484) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231) ~[h2-2.3.232.jar:2.3.232]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.3.jar:na]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261) ~[spring-jdbc-6.2.12.jar:6.2.12]
+	... 27 common frames omitted
+
+2025-10-28T00:23:46.863-05:00  INFO 29684 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : Starting ErpVdsApplication using Java 21.0.2 with PID 29684 (C:\demo2\erp-vds\target\classes started by gmflo in C:\demo2\erp-vds)
+2025-10-28T00:23:46.864-05:00  INFO 29684 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T00:23:47.260-05:00  INFO 29684 --- [erp-vds] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T00:23:47.303-05:00  INFO 29684 --- [erp-vds] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+2025-10-28T00:23:47.630-05:00  INFO 29684 --- [erp-vds] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T00:23:47.640-05:00  INFO 29684 --- [erp-vds] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T00:23:47.641-05:00  INFO 29684 --- [erp-vds] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-10-28T00:23:47.681-05:00  INFO 29684 --- [erp-vds] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T00:23:47.681-05:00  INFO 29684 --- [erp-vds] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 792 ms
+2025-10-28T00:23:47.773-05:00  INFO 29684 --- [erp-vds] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-28T00:23:47.808-05:00  INFO 29684 --- [erp-vds] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-10-28T00:23:47.830-05:00  INFO 29684 --- [erp-vds] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-28T00:23:48.008-05:00  INFO 29684 --- [erp-vds] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-28T00:23:48.028-05:00  INFO 29684 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T00:23:48.151-05:00  INFO 29684 --- [erp-vds] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-28T00:23:48.152-05:00  INFO 29684 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T00:23:48.169-05:00  WARN 29684 --- [erp-vds] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-28T00:23:48.182-05:00  INFO 29684 --- [erp-vds] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 2.3.232
@@ -23,13 +671,57 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-10-27T22:57:36.432-05:00  INFO 16108 --- [erp-vds] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-10-27T22:57:36.458-05:00  INFO 16108 --- [erp-vds] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-10-27T22:57:36.691-05:00  WARN 16108 --- [erp-vds] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-10-27T22:57:36.708-05:00  INFO 16108 --- [erp-vds] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2025-10-27T22:57:36.853-05:00  INFO 16108 --- [erp-vds] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2025-10-27T22:57:36.900-05:00  INFO 16108 --- [erp-vds] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-10-27T22:57:36.905-05:00  INFO 16108 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : Started ErpVdsApplication in 2.68 seconds (process running for 2.895)
-2025-10-27T22:58:31.568-05:00  INFO 16108 --- [erp-vds] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-10-27T22:58:31.568-05:00  INFO 16108 --- [erp-vds] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-10-27T22:58:31.569-05:00  INFO 16108 --- [erp-vds] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-28T00:23:48.726-05:00  INFO 29684 --- [erp-vds] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-28T00:23:48.754-05:00  INFO 29684 --- [erp-vds] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T00:23:48.951-05:00  INFO 29684 --- [erp-vds] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-28T00:23:49.311-05:00  WARN 29684 --- [erp-vds] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-28T00:23:49.327-05:00  INFO 29684 --- [erp-vds] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-10-28T00:23:49.543-05:00  INFO 29684 --- [erp-vds] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-10-28T00:23:49.702-05:00  INFO 29684 --- [erp-vds] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-10-28T00:23:49.758-05:00  INFO 29684 --- [erp-vds] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-28T00:23:49.763-05:00  INFO 29684 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : Started ErpVdsApplication in 3.191 seconds (process running for 3.419)
+2025-10-28T00:23:55.563-05:00  INFO 29684 --- [erp-vds] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-28T00:23:55.564-05:00  INFO 29684 --- [erp-vds] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-28T00:23:55.565-05:00  INFO 29684 --- [erp-vds] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-28T00:25:39.838-05:00  INFO 29684 --- [erp-vds] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-28T00:25:39.843-05:00  INFO 29684 --- [erp-vds] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-28T00:25:39.845-05:00  INFO 29684 --- [erp-vds] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T00:25:39.848-05:00  INFO 29684 --- [erp-vds] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T00:25:39.849-05:00  INFO 29684 --- [erp-vds] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T00:27:10.078-05:00  INFO 11164 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : Starting ErpVdsApplication using Java 21.0.2 with PID 11164 (C:\demo2\erp-vds\target\classes started by gmflo in C:\demo2\erp-vds)
+2025-10-28T00:27:10.080-05:00  INFO 11164 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T00:27:10.493-05:00  INFO 11164 --- [erp-vds] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T00:27:10.536-05:00  INFO 11164 --- [erp-vds] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2025-10-28T00:27:10.883-05:00  INFO 11164 --- [erp-vds] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T00:27:10.893-05:00  INFO 11164 --- [erp-vds] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T00:27:10.894-05:00  INFO 11164 --- [erp-vds] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-10-28T00:27:10.935-05:00  INFO 11164 --- [erp-vds] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T00:27:10.935-05:00  INFO 11164 --- [erp-vds] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 832 ms
+2025-10-28T00:27:11.029-05:00  INFO 11164 --- [erp-vds] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-28T00:27:11.065-05:00  INFO 11164 --- [erp-vds] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-10-28T00:27:11.091-05:00  INFO 11164 --- [erp-vds] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-28T00:27:11.273-05:00  INFO 11164 --- [erp-vds] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-28T00:27:11.293-05:00  INFO 11164 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T00:27:11.411-05:00  INFO 11164 --- [erp-vds] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-28T00:27:11.412-05:00  INFO 11164 --- [erp-vds] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T00:27:11.428-05:00  WARN 11164 --- [erp-vds] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-28T00:27:11.442-05:00  INFO 11164 --- [erp-vds] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-28T00:27:12.021-05:00  INFO 11164 --- [erp-vds] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-28T00:27:12.049-05:00  INFO 11164 --- [erp-vds] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T00:27:12.253-05:00  INFO 11164 --- [erp-vds] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-28T00:27:12.617-05:00  WARN 11164 --- [erp-vds] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-28T00:27:12.633-05:00  INFO 11164 --- [erp-vds] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-10-28T00:27:12.866-05:00  INFO 11164 --- [erp-vds] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-10-28T00:27:13.017-05:00  INFO 11164 --- [erp-vds] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-10-28T00:27:13.072-05:00  INFO 11164 --- [erp-vds] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-28T00:27:13.077-05:00  INFO 11164 --- [erp-vds] [main] com.vdsolutions.erp.ErpVdsApplication    : Started ErpVdsApplication in 3.305 seconds (process running for 3.54)
+2025-10-28T00:27:18.459-05:00  INFO 11164 --- [erp-vds] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-28T00:27:18.459-05:00  INFO 11164 --- [erp-vds] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-28T00:27:18.460-05:00  INFO 11164 --- [erp-vds] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
