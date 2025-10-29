@@ -7,11 +7,8 @@
 <body>
     <div layout:fragment="content">
         <div class="card">
-            <div class="card-header" th:classappend="${cliente.idCliente != null} ? 'bg-warning' : 'bg-primary'">
-                <h4 class="mb-0 text-white" th:text="${titulo}">
-                    <i class="fas" th:classappend="${cliente.idCliente != null} ? 'fa-edit' : 'fa-plus'"></i>
-                    Formulario de Cliente
-                </h4>
+            <div class="card-header">
+                <h4 th:text="${titulo}">Formulario de Cliente</h4>
             </div>
             <div class="card-body">
                 <form th:action="@{/clientes/guardar}" th:object="${cliente}" method="post">
@@ -22,11 +19,10 @@
                         <div class="col-md-6">
                             <label for="nombre" class="form-label">Nombre Completo *</label>
                             <input type="text" th:field="*{nombre}" class="form-control" 
-                                   id="nombre" required placeholder="Ingrese nombre completo">
-                            <div class="form-text">Nombre completo del cliente o razón social</div>
+                                   id="nombre" required>
                         </div>
                         <div class="col-md-3">
-                            <label for="tipoDocumento" class="form-label">Tipo Documento *</label>
+                            <label for="tipoDocumento" class="form-label">Tipo Documento</label>
                             <select th:field="*{tipoDocumento}" class="form-select" id="tipoDocumento" required>
                                 <option value="">Seleccionar...</option>
                                 <option th:each="tipo : ${tiposDocumento}" 
@@ -38,7 +34,7 @@
                         <div class="col-md-3">
                             <label for="numeroDocumento" class="form-label">Número Documento *</label>
                             <input type="text" th:field="*{numeroDocumento}" class="form-control" 
-                                   id="numeroDocumento" required placeholder="Ej: 12345678">
+                                   id="numeroDocumento" required>
                         </div>
                     </div>
                     
@@ -46,34 +42,28 @@
                         <div class="col-md-6">
                             <label for="direccion" class="form-label">Dirección</label>
                             <input type="text" th:field="*{direccion}" class="form-control" 
-                                   id="direccion" placeholder="Dirección completa">
+                                   id="direccion">
                         </div>
                         <div class="col-md-3">
                             <label for="contacto" class="form-label">Contacto</label>
                             <input type="text" th:field="*{contacto}" class="form-control" 
-                                   id="contacto" placeholder="Teléfono de contacto">
+                                   id="contacto">
                         </div>
                         <div class="col-md-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" th:field="*{email}" class="form-control" 
-                                   id="email" placeholder="correo@ejemplo.com">
+                                   id="email">
                         </div>
                     </div>
                     
                     <div class="row">
                         <div class="col-12">
-                            <div class="d-flex gap-2">
-                                <button type="submit" class="btn btn-success">
-                                    <i class="fas fa-save me-2"></i> 
-                                    <span th:text="${cliente.idCliente != null} ? 'Actualizar' : 'Guardar'">Guardar</span>
-                                </button>
-                                <a th:href="@{/clientes}" class="btn btn-secondary">
-                                    <i class="fas fa-times me-2"></i> Cancelar
-                                </a>
-                                <a th:href="@{/dashboard}" class="btn btn-outline-primary ms-auto">
-                                    <i class="fas fa-home me-2"></i> Ir al Dashboard
-                                </a>
-                            </div>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-save"></i> Guardar
+                            </button>
+                            <a th:href="@{/clientes}" class="btn btn-secondary">
+                                <i class="fas fa-times"></i> Cancelar
+                            </a>
                         </div>
                     </div>
                 </form>

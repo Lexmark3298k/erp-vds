@@ -1,3 +1,4 @@
+/*
 package com.vdsolutions.erp.controller;
 
 import org.springframework.stereotype.Controller;
@@ -11,3 +12,4 @@ public class AuthController {
         return "auth/login";
     }
 }
+     */
