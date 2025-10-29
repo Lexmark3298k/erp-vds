@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title th:text="${titulo} + ' - VD Solutions ERP'">Producto - VD Solutions ERP</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="card">
+            <div class="card-header" th:classappend="${producto.idProducto != null} ? 'bg-warning' : 'bg-warning'">
+                <h4 class="mb-0 text-white" th:text="${titulo}">
+                    <i class="fas" th:classappend="${producto.idProducto != null} ? 'fa-edit' : 'fa-plus'"></i>
+                    Formulario de Producto
+                </h4>
+            </div>
+            <div class="card-body">
+                <form th:action="@{/productos/guardar}" th:object="${producto}" method="post">
+                    <!-- Campo oculto para ID -->
+                    <input type="hidden" th:field="*{idProducto}">
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">Nombre del Producto *</label>
+                            <input type="text" th:field="*{nombre}" class="form-control" 
+                                   id="nombre" required placeholder="Ej: Cámara IP HD 1080p">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="categoria" class="form-label">Categoría *</label>
+                            <input type="text" th:field="*{categoria}" class="form-control" 
+                                   id="categoria" required placeholder="Ej: Cámaras, Grabadores, Sensores"
+                                   list="categoriasList">
+                            <datalist id="categoriasList">
+                                <option th:each="cat : ${categorias}" th:value="${cat}"></option>
+                            </datalist>
+                            <div class="form-text">Puede escribir una nueva categoría o seleccionar una existiente</div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <label for="descripcion" class="form-label">Descripción</label>
+                            <textarea th:field="*{descripcion}" class="form-control" 
+                                      id="descripcion" rows="3" placeholder="Descripción detallada del producto"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label for="precio" class="form-label">Precio (S/) *</label>
+                            <input type="number" th:field="*{precio}" class="form-control" 
+                                   id="precio" required min="0" step="0.01" placeholder="0.00">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="stock" class="form-label">Stock Actual *</label>
+                            <input type="number" th:field="*{stock}" class="form-control" 
+                                   id="stock" required min="0" placeholder="0">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="stockMinimo" class="form-label">Stock Mínimo *</label>
+                            <input type="number" th:field="*{stockMinimo}" class="form-control" 
+                                   id="stockMinimo" required min="0" placeholder="5" value="5">
+                            <div class="form-text">Se alertará cuando el stock llegue a este nivel</div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <label for="proveedor" class="form-label">Proveedor</label>
+                            <input type="text" th:field="*{proveedor}" class="form-control" 
+                                   id="proveedor" placeholder="Nombre del proveedor">
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fas fa-save me-2"></i> 
+                                    <span th:text="${producto.idProducto != null} ? 'Actualizar' : 'Guardar'">Guardar</span>
+                                </button>
+                                <a th:href="@{/productos}" class="btn btn-secondary">
+                                    <i class="fas fa-times me-2"></i> Cancelar
+                                </a>
+                                <a th:href="@{/dashboard}" class="btn btn-outline-primary ms-auto">
+                                    <i class="fas fa-home me-2"></i> Ir al Dashboard
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

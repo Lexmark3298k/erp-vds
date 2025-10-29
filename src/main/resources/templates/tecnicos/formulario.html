@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title th:text="${titulo} + ' - VD Solutions ERP'">Técnico - VD Solutions ERP</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="card">
+            <div class="card-header" th:classappend="${tecnico.idTecnico != null} ? 'bg-warning' : 'bg-success'">
+                <h4 class="mb-0 text-white" th:text="${titulo}">
+                    <i class="fas" th:classappend="${tecnico.idTecnico != null} ? 'fa-edit' : 'fa-plus'"></i>
+                    Formulario de Técnico
+                </h4>
+            </div>
+            <div class="card-body">
+                <form th:action="@{/tecnicos/guardar}" th:object="${tecnico}" method="post">
+                    <!-- Campo oculto para ID -->
+                    <input type="hidden" th:field="*{idTecnico}">
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">Nombre Completo *</label>
+                            <input type="text" th:field="*{nombre}" class="form-control" 
+                                   id="nombre" required placeholder="Ingrese nombre completo del técnico">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="especialidad" class="form-label">Especialidad</label>
+                            <input type="text" th:field="*{especialidad}" class="form-control" 
+                                   id="especialidad" placeholder="Ej: Cámaras de Seguridad, Alarmas, etc.">
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="telefono" class="form-label">Teléfono *</label>
+                            <input type="text" th:field="*{telefono}" class="form-control" 
+                                   id="telefono" required placeholder="Número de contacto">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <input type="text" th:field="*{direccion}" class="form-control" 
+                                   id="direccion" placeholder="Dirección del técnico">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="estado" class="form-label">Estado *</label>
+                            <select th:field="*{estado}" class="form-select" id="estado" required>
+                                <option th:each="estado : ${estadosTecnico}" 
+                                        th:value="${estado}" 
+                                        th:text="${estado}">
+                                </option>
+                            </select>
+                            <div class="form-text">Estado actual del técnico</div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fas fa-save me-2"></i> 
+                                    <span th:text="${tecnico.idTecnico != null} ? 'Actualizar' : 'Guardar'">Guardar</span>
+                                </button>
+                                <a th:href="@{/tecnicos}" class="btn btn-secondary">
+                                    <i class="fas fa-times me-2"></i> Cancelar
+                                </a>
+                                <a th:href="@{/dashboard}" class="btn btn-outline-primary ms-auto">
+                                    <i class="fas fa-home me-2"></i> Ir al Dashboard
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
