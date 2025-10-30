@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
+      
       layout:decorate="~{fragments/layout}">
 <head>
     <title>Dashboard - VD Solutions ERP</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+<script th:src="@{/js/app.js}"></script>
 </head>
 <body>
     <div layout:fragment="content">
@@ -11,58 +15,65 @@
             <div class="col-md-3">
                 <div class="card text-white bg-primary">
                     <div class="card-body">
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h5><i class="fas fa-users"></i> Clientes</h5>
-                                <h3 th:text="${totalClientes}">0</h3>
+                                <h6 class="card-title mb-1"><i class="fas fa-users"></i> Clientes</h6>
+                                <h2 class="mb-0" th:text="${totalClientes}">0</h2>
+                                <small>Total registrados</small>
                             </div>
-                            <div class="align-self-center">
-                                <i class="fas fa-users fa-2x opacity-50"></i>
+                            <div class="display-4 opacity-50">
+                                <i class="fas fa-users"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
             <div class="col-md-3">
                 <div class="card text-white bg-success">
                     <div class="card-body">
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h5><i class="fas fa-tools"></i> Técnicos</h5>
-                                <h3 th:text="${totalTecnicos}">0</h3>
+                                <h6 class="card-title mb-1"><i class="fas fa-tools"></i> Técnicos</h6>
+                                <h2 class="mb-0" th:text="${totalTecnicos}">0</h2>
+                                <small>En equipo</small>
                             </div>
-                            <div class="align-self-center">
-                                <i class="fas fa-tools fa-2x opacity-50"></i>
+                            <div class="display-4 opacity-50">
+                                <i class="fas fa-tools"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
             <div class="col-md-3">
                 <div class="card text-white bg-warning">
                     <div class="card-body">
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h5><i class="fas fa-boxes"></i> Productos</h5>
-                                <h3 th:text="${totalProductos}">0</h3>
+                                <h6 class="card-title mb-1"><i class="fas fa-boxes"></i> Productos</h6>
+                                <h2 class="mb-0" th:text="${totalProductos}">0</h2>
+                                <small>En inventario</small>
                             </div>
-                            <div class="align-self-center">
-                                <i class="fas fa-boxes fa-2x opacity-50"></i>
+                            <div class="display-4 opacity-50">
+                                <i class="fas fa-boxes"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
             <div class="col-md-3">
-                <div class="card text-white bg-info">
+                <div class="card text-white bg-danger">
                     <div class="card-body">
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h5><i class="fas fa-exclamation-triangle"></i> Bajo Stock</h5>
-                                <h3 th:text="${productosBajoStock}">0</h3>
+                                <h6 class="card-title mb-1"><i class="fas fa-exclamation-triangle"></i> Bajo Stock</h6>
+                                <h2 class="mb-0" th:text="${productosBajoStock}">0</h2>
+                                <small>Por reabastecer</small>
                             </div>
-                            <div class="align-self-center">
-                                <i class="fas fa-exclamation-triangle fa-2x opacity-50"></i>
+                            <div class="display-4 opacity-50">
+                                <i class="fas fa-exclamation-triangle"></i>
                             </div>
                         </div>
                     </div>
@@ -75,18 +86,18 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h5><i class="fas fa-bolt me-2"></i>Acciones Rápidas</h5>
+                        <h5 class="mb-0"><i class="fas fa-bolt me-2"></i>Acciones Rápidas</h5>
                     </div>
                     <div class="card-body">
                         <div class="d-grid gap-2">
-                            <a th:href="@{/clientes/nuevo}" class="btn btn-outline-primary btn-lg">
-                                <i class="fas fa-plus me-2"></i>Nuevo Cliente
+                            <a th:href="@{/clientes/nuevo}" class="btn btn-primary btn-lg">
+                                <i class="fas fa-plus me-2"></i> Nuevo Cliente
                             </a>
-                            <a th:href="@{/tecnicos/nuevo}" class="btn btn-outline-success btn-lg">
-                                <i class="fas fa-plus me-2"></i>Nuevo Técnico
+                            <a th:href="@{/tecnicos/nuevo}" class="btn btn-success btn-lg">
+                                <i class="fas fa-plus me-2"></i> Nuevo Técnico
                             </a>
-                            <a th:href="@{/productos/nuevo}" class="btn btn-outline-warning btn-lg">
-                                <i class="fas fa-plus me-2"></i>Nuevo Producto
+                            <a th:href="@{/productos/nuevo}" class="btn btn-warning btn-lg">
+                                <i class="fas fa-plus me-2"></i> Nuevo Producto
                             </a>
                         </div>
                     </div>
@@ -97,15 +108,18 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h5><i class="fas fa-chart-bar me-2"></i>Reportes</h5>
+                        <h5 class="mb-0"><i class="fas fa-chart-bar me-2"></i>Reportes</h5>
                     </div>
                     <div class="card-body">
                         <div class="d-grid gap-2">
-                            <a th:href="@{/reportes/clientes/excel}" class="btn btn-outline-info">
-                                <i class="fas fa-file-excel me-2"></i>Reporte de Clientes (Excel)
+                            <a th:href="@{/reportes/clientes/excel}" class="btn btn-info">
+                                <i class="fas fa-file-excel me-2"></i> Reporte de Clientes
                             </a>
-                            <a th:href="@{/reportes/inventario/excel}" class="btn btn-outline-info">
-                                <i class="fas fa-file-excel me-2"></i>Reporte de Inventario (Excel)
+                            <a th:href="@{/reportes/inventario/excel}" class="btn btn-info">
+                                <i class="fas fa-file-excel me-2"></i> Reporte de Inventario
+                            </a>
+                            <a th:href="@{/reportes/tecnicos/excel}" class="btn btn-info">
+                                <i class="fas fa-file-excel me-2"></i> Reporte de Técnicos
                             </a>
                         </div>
                     </div>
@@ -118,34 +132,98 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5><i class="fas fa-info-circle me-2"></i>Información del Sistema</h5>
+                        <h5 class="mb-0"><i class="fas fa-info-circle me-2"></i>Información del Sistema</h5>
                     </div>
                     <div class="card-body">
-                        <p>Bienvenido al Sistema ERP de <strong>VD Solutions</strong>. Desde aquí puedes gestionar todos los aspectos de tu negocio.</p>
                         <div class="row">
                             <div class="col-md-6">
-                                <h6>Módulos Disponibles:</h6>
-                                <ul>
-                                    <li><strong>Clientes:</strong> Gestión completa de clientes y contactos</li>
-                                    <li><strong>Técnicos:</strong> Administración del personal técnico</li>
-                                    <li><strong>Inventario:</strong> Control de productos y stock</li>
-                                    <li><strong>Reportes:</strong> Generación de reportes en Excel</li>
+                                <h6 class="text-primary mb-3">
+                                    <i class="fas fa-check-circle me-2"></i>Módulos Disponibles
+                                </h6>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <i class="fas fa-users text-success me-2"></i>
+                                        <strong>Clientes:</strong> Gestión completa de clientes y contactos
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="fas fa-tools text-success me-2"></i>
+                                        <strong>Técnicos:</strong> Administración del personal técnico
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="fas fa-boxes text-success me-2"></i>
+                                        <strong>Inventario:</strong> Control de productos y stock
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="fas fa-chart-bar text-success me-2"></i>
+                                        <strong>Reportes:</strong> Generación de reportes en Excel
+                                    </li>
                                 </ul>
                             </div>
                             <div class="col-md-6">
-                                <h6>Próximas Funcionalidades:</h6>
-                                <ul>
-                                    <li>Módulo de Contratos</li>
-                                    <li>Gestión de Tickets de Soporte</li>
-                                    <li>Facturación Electrónica</li>
-                                    <li>Dashboard Avanzado con Gráficos</li>
+                                <h6 class="text-warning mb-3">
+                                    <i class="fas fa-road me-2"></i>Próximas Funcionalidades
+                                </h6>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <i class="fas fa-file-contract text-warning me-2"></i>
+                                        Módulo de Contratos
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="fas fa-ticket-alt text-warning me-2"></i>
+                                        Gestión de Tickets de Soporte
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="fas fa-receipt text-warning me-2"></i>
+                                        Facturación Electrónica
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="fas fa-chart-line text-warning me-2"></i>
+                                        Dashboard Avanzado con Gráficos
+                                    </li>
                                 </ul>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <h6 class="text-info mb-3">
+                                    <i class="fas fa-rocket me-2"></i>Resumen del Sistema
+                                </h6>
+                                <div class="alert alert-info">
+                                    <p class="mb-2">
+                                        <strong>VD Solutions ERP</strong> es un sistema de gestión integral desarrollado 
+                                        para optimizar los procesos de venta, instalación y soporte técnico de sistemas 
+                                        de videovigilancia y seguridad electrónica.
+                                    </p>
+                                    <p class="mb-0">
+                                        Desde este dashboard puedes acceder a todos los módulos del sistema y gestionar 
+                                        eficientemente tu negocio.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div layout:fragment="scripts">
+        <script>
+            // Script específico para el dashboard
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('Dashboard VD Solutions ERP cargado');
+                
+                // Animación para las tarjetas de estadísticas
+                const statCards = document.querySelectorAll('.card.text-white');
+                statCards.forEach((card, index) => {
+                    card.style.animationDelay = (index * 0.1) + 's';
+                    card.classList.add('animate__animated', 'animate__fadeInUp');
+                });
+            });
+        </script>
     </div>
 </body>
 </html>

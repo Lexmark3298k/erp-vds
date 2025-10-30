@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
       layout:decorate="~{fragments/layout}">
 <head>
     <title th:text="${titulo} + ' - VD Solutions ERP'">Cliente - VD Solutions ERP</title>
@@ -8,14 +9,13 @@
     <div layout:fragment="content">
         <div class="card">
             <div class="card-header" th:classappend="${cliente.idCliente != null} ? 'bg-warning' : 'bg-primary'">
-                <h4 class="mb-0 text-white" th:text="${titulo}">
+                <h4 class="mb-0 text-white">
                     <i class="fas" th:classappend="${cliente.idCliente != null} ? 'fa-edit' : 'fa-plus'"></i>
-                    Formulario de Cliente
+                    <span th:text="${titulo}">Formulario de Cliente</span>
                 </h4>
             </div>
             <div class="card-body">
                 <form th:action="@{/clientes/guardar}" th:object="${cliente}" method="post">
-                    <!-- Campo oculto para ID -->
                     <input type="hidden" th:field="*{idCliente}">
                     
                     <div class="row mb-3">
@@ -23,7 +23,6 @@
                             <label for="nombre" class="form-label">Nombre Completo *</label>
                             <input type="text" th:field="*{nombre}" class="form-control" 
                                    id="nombre" required placeholder="Ingrese nombre completo">
-                            <div class="form-text">Nombre completo del cliente o razón social</div>
                         </div>
                         <div class="col-md-3">
                             <label for="tipoDocumento" class="form-label">Tipo Documento *</label>

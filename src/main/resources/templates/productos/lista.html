@@ -1,56 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
       layout:decorate="~{fragments/layout}">
 <head>
     <title>Inventario - VD Solutions ERP</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+<script th:src="@{/js/app.js}"></script>
 </head>
 <body>
     <div layout:fragment="content">
-        <div class="d-flex justify-content-between mb-4">
-            <h2><i class="fas fa-boxes me-2"></i>Gestión de Inventario</h2>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0"><i class="fas fa-boxes me-2"></i>Gestión de Inventario</h2>
             <a th:href="@{/productos/nuevo}" class="btn btn-primary">
                 <i class="fas fa-plus me-2"></i> Nuevo Producto
             </a>
-        </div>
-
-        <!-- Estadísticas -->
-        <div class="row mb-4">
-            <div class="col-md-3">
-                <div class="card bg-light">
-                    <div class="card-body text-center">
-                        <h6 class="card-title">Total Productos</h6>
-                        <h3 th:text="${#lists.size(productos)}" class="text-primary">0</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card bg-light">
-                    <div class="card-body text-center">
-                        <h6 class="card-title">Bajo Stock</h6>
-                        <h3 th:text="${#lists.size(productosBajoStock)}" class="text-warning">0</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card bg-light">
-                    <div class="card-body text-center">
-                        <h6 class="card-title">Categorías</h6>
-                        <h3 th:text="${#lists.size(categorias)}" class="text-info">0</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Alertas de Stock Bajo -->
-        <div th:if="${not #lists.isEmpty(productosBajoStock)}" class="alert alert-warning">
-            <h6><i class="fas fa-exclamation-triangle me-2"></i>Productos con Stock Bajo</h6>
-            <ul class="mb-0">
-                <li th:each="producto : ${productosBajoStock}">
-                    <strong th:text="${producto.nombre}"></strong> - 
-                    Stock actual: <span th:text="${producto.stock}" class="badge bg-danger"></span> 
-                    (Mínimo: <span th:text="${producto.stockMinimo}"></span>)
-                </li>
-            </ul>
         </div>
 
         <!-- Tabla de Productos -->
@@ -68,47 +31,29 @@
                                 <th>Categoría</th>
                                 <th>Precio</th>
                                 <th>Stock</th>
-                                <th>Stock Mín.</th>
                                 <th>Proveedor</th>
-                                <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr th:each="producto : ${productos}" th:class="${producto.bajoStock} ? 'table-warning'">
+                            <tr th:each="producto : ${productos}">
                                 <td th:text="${producto.idProducto}">1</td>
                                 <td th:text="${producto.nombre}">Nombre Producto</td>
                                 <td>
                                     <span class="badge bg-info" th:text="${producto.categoria}">Categoría</span>
                                 </td>
+                                <td th:text="'S/ ' + ${#numbers.formatDecimal(producto.precio, 1, 2)}">0.00</td>
                                 <td>
-                                    <strong th:text="'S/ ' + ${#numbers.formatDecimal(producto.precio, 1, 2)}">0.00</strong>
+                                    <span th:class="${producto.stock < 10} ? 'badge bg-danger' : 'badge bg-success'" 
+                                          th:text="${producto.stock}">0</span>
                                 </td>
-                                <td>
-                                    <span th:class="${producto.bajoStock} ? 'badge bg-danger' : 'badge bg-success'" 
-                                          th:text="${producto.stock}">
-                                        0
-                                    </span>
-                                </td>
-                                <td th:text="${producto.stockMinimo}">5</td>
                                 <td th:text="${producto.proveedor}">Proveedor</td>
-                                <td>
-                                    <span th:if="${producto.bajoStock}" class="badge bg-warning">BAJO STOCK</span>
-                                    <span th:unless="${producto.bajoStock}" class="badge bg-success">NORMAL</span>
-                                </td>
                                 <td>
                                     <div class="btn-group btn-group-sm">
                                         <a th:href="@{/productos/editar/{id}(id=${producto.idProducto})}" 
                                            class="btn btn-warning" title="Editar">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <button type="button" class="btn btn-info" data-bs-toggle="modal" 
-                                                data-bs-target="#stockModal" 
-                                                th:attr="data-producto-id=${producto.idProducto},
-                                                         data-producto-nombre=${producto.nombre}"
-                                                title="Actualizar Stock">
-                                            <i class="fas fa-boxes"></i>
-                                        </button>
                                         <a th:href="@{/productos/eliminar/{id}(id=${producto.idProducto})}" 
                                            class="btn btn-danger" title="Eliminar"
                                            onclick="return confirm('¿Está seguro de eliminar este producto?')">
@@ -118,7 +63,7 @@
                                 </td>
                             </tr>
                             <tr th:if="${#lists.isEmpty(productos)}">
-                                <td colspan="9" class="text-center text-muted py-4">
+                                <td colspan="7" class="text-center text-muted py-4">
                                     <i class="fas fa-boxes fa-2x mb-3"></i>
                                     <br>
                                     No se encontraron productos en el inventario.
@@ -133,57 +78,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Modal para Actualizar Stock -->
-        <div class="modal fade" id="stockModal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Actualizar Stock</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form th:action="@{/productos/actualizar-stock/}" method="post" id="stockForm">
-                            <input type="hidden" name="id" id="productoId">
-                            <div class="mb-3">
-                                <label for="productoNombre" class="form-label">Producto</label>
-                                <input type="text" class="form-control" id="productoNombre" readonly>
-                            </div>
-                            <div class="mb-3">
-                                <label for="cantidad" class="form-label">Cantidad a agregar/restar</label>
-                                <input type="number" class="form-control" id="cantidad" name="cantidad" 
-                                       required placeholder="Ej: 10 (agrega), -5 (resta)">
-                                <div class="form-text">Use números positivos para agregar stock, negativos para restar</div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" form="stockForm" class="btn btn-primary">Actualizar Stock</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div layout:fragment="scripts">
-        <script>
-            // Script para el modal de stock
-            document.addEventListener('DOMContentLoaded', function() {
-                var stockModal = document.getElementById('stockModal');
-                stockModal.addEventListener('show.bs.modal', function (event) {
-                    var button = event.relatedTarget;
-                    var productoId = button.getAttribute('data-producto-id');
-                    var productoNombre = button.getAttribute('data-producto-nombre');
-                    
-                    document.getElementById('productoId').value = productoId;
-                    document.getElementById('productoNombre').value = productoNombre;
-                    
-                    // Actualizar action del form
-                    document.getElementById('stockForm').action = '/productos/actualizar-stock/' + productoId;
-                });
-            });
-        </script>
     </div>
 </body>
 </html>

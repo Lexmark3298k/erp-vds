@@ -1,5 +1,7 @@
 package com.vdsolutions.erp.controller;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
@@ -29,7 +31,7 @@ public class ReporteController {
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
                     .contentLength(reporte.length)
                     .body(resource);
-        } catch (Exception e) {
+        } catch (IOException e) {
             return ResponseEntity.badRequest().build();
         }
     }
@@ -45,7 +47,7 @@ public class ReporteController {
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
                     .contentLength(reporte.length)
                     .body(resource);
-        } catch (Exception e) {
+        } catch (IOException e) {
             return ResponseEntity.badRequest().build();
         }
     }

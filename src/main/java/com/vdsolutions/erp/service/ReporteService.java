@@ -28,8 +28,8 @@ public class ReporteService {
     @Autowired
     private ProductoService productoService;
 
-    @Autowired
-    private TecnicoService tecnicoService;
+   //@Autowired
+    //private TecnicoService tecnicoService;
 
     public byte[] generarReporteClientes() throws IOException {
         List<Cliente> clientes = clienteService.obtenerTodosClientes();
