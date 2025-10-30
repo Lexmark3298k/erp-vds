@@ -28,7 +28,8 @@ public class ReporteService {
     @Autowired
     private ProductoService productoService;
 
-    // Nota: Removí tecnicoService ya que no se usa en los reportes actuales
+    @Autowired
+    private TecnicoService tecnicoService;
 
     public byte[] generarReporteClientes() throws IOException {
         List<Cliente> clientes = clienteService.obtenerTodosClientes();
@@ -127,11 +128,5 @@ public class ReporteService {
             workbook.write(outputStream);
             return outputStream.toByteArray();
         }
-    }
-
-    // Método adicional para reporte de técnicos (opcional para el futuro)
-    public byte[] generarReporteTecnicos() throws IOException {
-        // Implementación futura
-        return new byte[0];
     }
 }

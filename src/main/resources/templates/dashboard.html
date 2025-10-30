@@ -6,49 +6,140 @@
 </head>
 <body>
     <div layout:fragment="content">
+        <!-- Estadísticas Rápidas -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card text-white bg-primary">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h5><i class="fas fa-users"></i> Clientes</h5>
+                                <h3 th:text="${totalClientes}">0</h3>
+                            </div>
+                            <div class="align-self-center">
+                                <i class="fas fa-users fa-2x opacity-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-success">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h5><i class="fas fa-tools"></i> Técnicos</h5>
+                                <h3 th:text="${totalTecnicos}">0</h3>
+                            </div>
+                            <div class="align-self-center">
+                                <i class="fas fa-tools fa-2x opacity-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-warning">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h5><i class="fas fa-boxes"></i> Productos</h5>
+                                <h3 th:text="${totalProductos}">0</h3>
+                            </div>
+                            <div class="align-self-center">
+                                <i class="fas fa-boxes fa-2x opacity-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-info">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h5><i class="fas fa-exclamation-triangle"></i> Bajo Stock</h5>
+                                <h3 th:text="${productosBajoStock}">0</h3>
+                            </div>
+                            <div class="align-self-center">
+                                <i class="fas fa-exclamation-triangle fa-2x opacity-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
+            <!-- Acciones Rápidas -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fas fa-bolt me-2"></i>Acciones Rápidas</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-grid gap-2">
+                            <a th:href="@{/clientes/nuevo}" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-plus me-2"></i>Nuevo Cliente
+                            </a>
+                            <a th:href="@{/tecnicos/nuevo}" class="btn btn-outline-success btn-lg">
+                                <i class="fas fa-plus me-2"></i>Nuevo Técnico
+                            </a>
+                            <a th:href="@{/productos/nuevo}" class="btn btn-outline-warning btn-lg">
+                                <i class="fas fa-plus me-2"></i>Nuevo Producto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reportes -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fas fa-chart-bar me-2"></i>Reportes</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-grid gap-2">
+                            <a th:href="@{/reportes/clientes/excel}" class="btn btn-outline-info">
+                                <i class="fas fa-file-excel me-2"></i>Reporte de Clientes (Excel)
+                            </a>
+                            <a th:href="@{/reportes/inventario/excel}" class="btn btn-outline-info">
+                                <i class="fas fa-file-excel me-2"></i>Reporte de Inventario (Excel)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información del Sistema -->
+        <div class="row mt-4">
             <div class="col-12">
                 <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fas fa-info-circle me-2"></i>Información del Sistema</h5>
+                    </div>
                     <div class="card-body">
-                        <h3>Bienvenido al Dashboard</h3>
-                        <p>Esta es la página principal del sistema ERP de VD Solutions.</p>
-                        
-                        <div class="row mt-4">
-                            <div class="col-md-3">
-                                <div class="card text-white bg-primary">
-                                    <div class="card-body">
-                                        <h5><i class="fas fa-users"></i> Clientes</h5>
-                                        <h3>0</h3>
-                                        <p>Clientes registrados</p>
-                                    </div>
-                                </div>
+                        <p>Bienvenido al Sistema ERP de <strong>VD Solutions</strong>. Desde aquí puedes gestionar todos los aspectos de tu negocio.</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Módulos Disponibles:</h6>
+                                <ul>
+                                    <li><strong>Clientes:</strong> Gestión completa de clientes y contactos</li>
+                                    <li><strong>Técnicos:</strong> Administración del personal técnico</li>
+                                    <li><strong>Inventario:</strong> Control de productos y stock</li>
+                                    <li><strong>Reportes:</strong> Generación de reportes en Excel</li>
+                                </ul>
                             </div>
-                            <div class="col-md-3">
-                                <div class="card text-white bg-success">
-                                    <div class="card-body">
-                                        <h5><i class="fas fa-tools"></i> Servicios</h5>
-                                        <h3>0</h3>
-                                        <p>Servicios activos</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card text-white bg-warning">
-                                    <div class="card-body">
-                                        <h5><i class="fas fa-boxes"></i> Inventario</h5>
-                                        <h3>0</h3>
-                                        <p>Productos en stock</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card text-white bg-info">
-                                    <div class="card-body">
-                                        <h5><i class="fas fa-chart-line"></i> Ingresos</h5>
-                                        <h3>S/. 0</h3>
-                                        <p>Este mes</p>
-                                    </div>
-                                </div>
+                            <div class="col-md-6">
+                                <h6>Próximas Funcionalidades:</h6>
+                                <ul>
+                                    <li>Módulo de Contratos</li>
+                                    <li>Gestión de Tickets de Soporte</li>
+                                    <li>Facturación Electrónica</li>
+                                    <li>Dashboard Avanzado con Gráficos</li>
+                                </ul>
                             </div>
                         </div>
                     </div>

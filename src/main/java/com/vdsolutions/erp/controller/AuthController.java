@@ -1,3 +1,4 @@
+/* eviar controlador  duplicidad */
 /*
 package com.vdsolutions.erp.controller;
 
@@ -12,4 +13,4 @@ public class AuthController {
         return "auth/login";
     }
 }
-     */
+    */
